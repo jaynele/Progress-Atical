@@ -41,6 +41,9 @@ class obj_and_api
         $start = $objReflection->getStartLine();'类文件开始的行号';
         $end = $objReflection->getEndLine();'类文件结束的行号';
         implode(array_slice($lines,$start-1;$end));
+
+        $objReflection->getMethods();'获取检测类中所有方法对象直接用ReflectionMethod';
+
     }
 }
 
