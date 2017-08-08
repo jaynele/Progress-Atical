@@ -11,7 +11,13 @@ namespace obj_tool;
 
 class obj_and_api2
 {
-    public function a(){
-        echo '';
+    public function a()
+    {
+        echo 'df,oo,dfslfk,fjdkslfdkl';
+        echo 'df,djfsl,dfslfk,fjdkslfdkl';
+        echo 'df,djfsl,dfslfk,fjdkslfdkl';
+        echo 'df,djfsl,dfslfk,fjdkslfdkl';
+        echo 'df,djfsl,dfslfk,fjdkslfdkl';
+        echo 'djfsl';
     }
 }
