@@ -11,9 +11,10 @@ use Think\Model;
 
 class UserModel extends Model
 {
-    public function add()
+    public function getStuAll()
     {
-        $user_id = D('User')->field('user_id')->select();
-        return $user_id = array_column($user_id);
+        $list = $this->field('user_id')->select();
+        $arr_stu_id = array_column($list,'user_id');
+        return $arr_stu_id;
     }
 }

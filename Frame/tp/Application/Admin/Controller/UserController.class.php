@@ -11,14 +11,8 @@ use Think\Controller;
 
 class UserController extends Controller
 {
-    public function hello()
+    public function index()
     {
-        $this->show();
-    }
-
-    public function aa()
-    {
-        var_dump($_SERVER['HTTP_HOST']);
-        var_dump($_SERVER['REQUEST_URI']);
+        dump(D(User)->getStuAll());die;
     }
 }

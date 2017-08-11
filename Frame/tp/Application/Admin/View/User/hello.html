@@ -5,6 +5,6 @@
     <title>wwww</title>
 </head>
 <body>
-    <span>admin userController </span>
+    <span>admin userController hellofunc</span>
 </body>
 </html>
