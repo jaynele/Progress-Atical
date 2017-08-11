@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="./click.js"></script>
+<!--外部js不能与页面运行加载代码放一个script里面-->
+<script>document.write('<div style="width:100px;heigh:100px;background: hotpink;">div 内容</div>');</script>
+<body>
+<h1>内容</h1>
+
+<p id="demo">demo</p>
+<button onclick="conClick();">点击</button>
+<image id="im" src="./on.jpg" onclick="changeImg();"></image>
+<input type="text" id="inp">
+<button onclick="testNum();">测试不是数字</button><br />
+<button onclick="lik1();">弹窗输出</button>
+<button onclick="lik2();">加载渲染输出</button>
+</body>
+</html>
