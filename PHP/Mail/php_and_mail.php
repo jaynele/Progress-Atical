@@ -12,7 +12,7 @@ class Smtp{
     var $sock;
     var $from_mail;
 
-    function __construct($relay_host = 'smtp.zmnedu.com', $smtp_port = 25,$auth = true,$user,$pass){
+    function __construct($relay_host = '', $smtp_port = 25,$auth = true,$user,$pass){
         $from_mail = $user;
         $this->debug = FALSE;
         $this->smtp_port = $smtp_port;
@@ -65,7 +65,7 @@ class Smtp{
 //--------------------------------------
 
     function sendmail($to,  $body1 = "",$subject1 = "", $mailtype="HTML", $cc = "", $bcc = "", $additional_headers = "",$charset="utf-8"){
-        $from_user1 = iconv("utf-8","GB2312","啄木鸟教育");;
+        $from_user1 = iconv("utf-8","GB2312","");;
         $from = $this->user;
         //$body1 = $body1."<br /><br /><br />===================================================================<br />此为系统自动发送，请不要回复！<br /><a href='".ZMN_URL."' target='_blank' >啄木鸟教育</a><br><a href='".ZMN_URL."' target='_blank' >".ZMN_URL."</a>";
         //$body1 = $body1."<br /><br /><br />===================================================================<br />此为系统邮件，请不要回复！<br />啄木鸟教育";

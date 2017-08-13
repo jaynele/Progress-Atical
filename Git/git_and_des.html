@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    https://www.kernel.org/pub/software/scm/git/
+    sudo wget
+    tar
+    cd
+    ./configure --prefix=/usr/local/git
+    make
+    make install
+    环境配置 echo 'export PATH=/usr/local/git/bin:$PATH' > /etc/profile.d/git.sh
+    执行   /etc/profile.d/git.sh
+    /usr/local/git/bin/git --version
+    看到版本号说明安装成功
+    ln -s /usr/local/git/bin/* /usr/bin/
+    建立软连接方便以后使用
+</body>
+</html>
