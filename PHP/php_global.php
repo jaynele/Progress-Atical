@@ -28,11 +28,11 @@ echo 'PHP 将所有全局变量存储在一个名为 $GLOBALS[index] 的数组�
 $x=5;
 $y=10;
  
-function myTest()
+function myTessst()
 {
     $GLOBALS['y']=$GLOBALS['x']+$GLOBALS['y'];
-} 
- 
-myTest();
+}
+
+myTessst();
 echo $y;
 ?>
