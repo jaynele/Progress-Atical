@@ -17,7 +17,7 @@ abstract class Explomm
         $this->name = $name;
     }
 
-    static function recuire($name)
+    function recuire($name)
     {
         $num       = count($this->arrName) - 1;
         $num       = rand(1, $num);
