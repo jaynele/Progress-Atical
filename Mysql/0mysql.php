@@ -53,6 +53,15 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
             查有商品的栏目
             （3）select cat_id,cat_name from cat_table where exist (select shop_name,cat_id from shop where shop.cat_id = cat.cat_id);
 
+            连接查询
+            inner join on  两表都有
+            left join on   左表都有，右表没有null代替
+            right join on  右表都有，左表没有null代替
+
+            union查询
+            sql1返回N行，sql2返回M行
+            sql1 union sql2 返回N+M行，sql1和sql2的列数应该相等，结果会以sql1的列名为准
+
 
 
             write:
