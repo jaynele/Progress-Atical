@@ -43,8 +43,19 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
             五种使用顺序要严格按照以上避免出错，其中做筛选：where、having;分组：group by;排序：order by;限制取出数量：limit
 
             子句查询
+            where 型子查询
             查每个栏目下最新的商品
             (1) select shop_id,,shop_name,shop_price from shop where shop_id in (select max(shop_id) from shop group by cat_id);
+            from 型子查询
+            查每个栏目下最新的商品
+            （2）select cat_id,shop_id,shop_name,shop_price from (select shop_id,shop_name,shop_price from shop order by cat_id,shop_id desc) as tmp
+            group by tmp.cat_id limit 1;
+            查有商品的栏目
+            （3）select cat_id,cat_name from cat_table where exist (select shop_name,cat_id from shop where shop.cat_id = cat.cat_id);
+
+
+
+
 
             select user_age + 1 from zmn_user;
             select shop_num * shop_price from shop;
