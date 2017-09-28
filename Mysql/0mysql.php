@@ -39,6 +39,11 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
             按照两个及两个以上字段排序,如：按照每个人最新人排序后（即倒叙），然后按照每个人成绩倒叙排列
             (9) select name,score,name_id from table where score > 60 order by name_id desc,score desc;
 
+            上面是基础的查询 五种：where 、having 、group by 、order by 、limit
+            五种使用顺序要严格按照以上避免出错，其中做筛选：where、having;分组：group by;排序：order by;限制取出数量：limit
+
+
+
 
 
 
