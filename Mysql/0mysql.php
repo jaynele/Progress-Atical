@@ -42,6 +42,22 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
             上面是基础的查询 五种：where 、having 、group by 、order by 、limit
             五种使用顺序要严格按照以上避免出错，其中做筛选：where、having;分组：group by;排序：order by;限制取出数量：limit
 
+            子句查询
+            查每个栏目下最新的商品
+            (1) select shop_id,,shop_name,shop_price from shop where shop_id in (select max(shop_id) from shop group by cat_id);
+
+            select user_age + 1 from zmn_user;
+            select shop_num * shop_price from shop;
+            select sum(shop_num) from shop;
+            select sum(shop_num) from shop group by cat_id;
+            select sum(shop_num) as num from shop having num > 50 group by cat_id;
+            select cat_id,sum(shop_num) as num from shop where cat_id > 20 having num > 50 group by cat_id;
+            name,class,score  成绩不及格有2门及2门以上的人的平均成绩
+            select name,avg(score),sum(score < 60) as num from table having num >= 2 group by name;
+            select name,score from table order by score desc;
+
+
+
 
 
 
