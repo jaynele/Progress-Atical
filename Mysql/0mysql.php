@@ -33,7 +33,12 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
             where,having都是做筛选查询，如果分组了，那么使用顺序是where,having,group by
             (7)select cat_id,sum(user_price) as user_sum_price from zmn_user where cat_id > 23 having user_sum_price > 200 group by cat_id;
             查两门及两门以上不及格的人的平均成绩 name,depart,score
-            select name,avg(score),count(score<60) as num from table having num >= 2  group by name;
+            select name,avg(score),sum(score<60) as num from table having num >= 2  group by name;
+            按照一个字段排序
+            （8）select name,score from table where score > 60 order by score desc;
+            按照两个及两个以上字段排序,如：按照每个人最新人排序后（即倒叙），然后按照每个人成绩倒叙排列
+            (9) select name,score,name_id from table where score > 60 order by name_id desc,score desc;
+
 
 
 
