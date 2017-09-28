@@ -61,6 +61,8 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
             union查询
             sql1返回N行，sql2返回M行
             sql1 union sql2 返回N+M行，sql1和sql2的列数应该相等，结果会以sql1的列名为准
+            注意：union 会比较行是否相等，相等的行会合并。比较的过程中会耗资源。
+            union all 行即使相等，也不会合并，实际中用union all，两边的子句不使用order by排序
 
 
 
