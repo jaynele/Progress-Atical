@@ -55,17 +55,35 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("
 
 
 
-
-
+            write:
+            (1)一列计算
             select user_age + 1 from zmn_user;
+            （2）两列计算
             select shop_num * shop_price from shop;
-            select sum(shop_num) from shop;
-            select sum(shop_num) from shop group by cat_id;
-            select sum(shop_num) as num from shop having num > 50 group by cat_id;
-            select cat_id,sum(shop_num) as num from shop where cat_id > 20 having num > 50 group by cat_id;
-            name,class,score  成绩不及格有2门及2门以上的人的平均成绩
+            （3）两列计算+函数计算
+            select sum(shop_num * shop_price) from shop;
+            （4）分组计算
+            select cat_id,sum(shop_num * shop_price) from shop group by cat_id;
+            （5）对计算出来的数据进一步筛选
+            select (shop_num * shop_price) as num from shop having num > 500;
+            （6）计算出来的数据进行筛选，外加其他的筛选条件
+            select (shop_num * shop_price) as num from shop where cat_id > 20 having num > 500;
+            （7）查两门及两门以上不及格的人的评价成绩
             select name,avg(score),sum(score < 60) as num from table having num >= 2 group by name;
-            select name,score from table order by score desc;
+            （8）按一个字段排序
+            select name,avg(score) from table order by score desc;
+            （9）按两个字段排序
+            select shop_num,shop_name from shop order by cat_id desc,shop_id desc;
+            （1）子句where
+            select shop_name,shop_id,shop_price from shop where shop_id in (select max(shop_id) from shop group by cat_id);
+            （2）子句from
+            select shop_name,shop_id,shop_price from (select shop_name,shop_id,shop_price from shop order by cat_id, order by shop_id desc) as tmp group by cat_id limit 1;
+            （3）子句exist
+            select cat_id,cat_name from cat where exist (select shop_id,cat_id from shop where shop.cat_id = cat.cat_id);
+
+
+
+
 
 
 
