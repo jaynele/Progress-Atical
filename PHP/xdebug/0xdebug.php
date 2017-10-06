@@ -40,6 +40,9 @@ echo '
 
         (2)配置PHP Debug找到【Debug】，XDebug中的Debug Port填写9000，其它默认。
 
+        (3) 设置debug. [Edit configuration] 点添加，【php web Application】
+        (4)添加本地的 web server~     www.51open.pcom 是我本地的 web server~ ~
+
 
 
 （三）浏览器FireFox中xdebug配置
