@@ -545,10 +545,88 @@ _initialize
 （五、15）事件
 
 （六、1）视图
+
+        (111)模板目录
+        模块下面有个view文件夹，下面再建控制器名字的文件夹，然后下面建view出来的名字的html文件
+
         （1）视图实例化
             return view('hello',['name'=>'thinkphp']);
-            模块下面有个view文件夹，下面再建控制器名字的文件夹，然后下面建view出来的名字的html文件
-            模板调用输出  {$name}
+
+        （2）模板中赋值
+            (11)单值赋值
+            {$name}
+            (12)数组赋值
+            {$name.title}
+
+        （3）判断输出
+            {eq name='name' value='value'}
+            相等
+            {else/}
+            不相等
+            {/eq}
+
+（六、2）模板变量
+
+        （1）普通模板变量
+            需要控制器中赋值，然后在模板中输出
+        （2）系统常量模板变量
+            不需要控制器中赋值，直接在模板中输出
+
+（六、3）模板中变量值的处理
+        1、
+        {$data.name|md5}
+        {$num|date="y-m-d",###}
+        {$data.name|substr=0,3}
+        如果变量用后面的函数时候，是作为后面函数的第一个参数，可以这样使用
+
+        2、模板变量要经过多个函数处理
+        {$name|md5|strtoupper|substr=0,3}
+        上面的相当于    <?php echo (substr(strtoupper(md5($name)),0,3)); ?>
+        函数会按照从左到右的顺序依次调用
+
+        3、模板变量默认值
+        {$num|default="传值内容为空"}
+        当$num有值但是为空的时候，会用default中的值
+
+        4、模板变量运算
+        {$a+$b}
+        {$a-$b}
+        {$a+$b*10+$c}
+
+        5、模板三元运算
+        {$status? '正常' : '错误'}
+        {$info['status']? $info['msg'] : $info['error']}
+        {$info.status? $info.msg : $info.error }
+
+        6、模板布局
+        7、模板继承
+        8、模板之包含文件
+
+        9、为空时候模板中循环输出
+        {volist name="list" id="vo" empty="暂时没有数据" }
+        {$vo.id}|{$vo.name}
+        {/volist}
+
+        empty不支持放入html标签，但可以控制器里assign赋值给empty变量
+
+        10、volist  循环输出
+        11、for     循环输出
+
+        12、比较   eq   neq   gt   egt   lt   elt
+        13、判读   switch   if   in   notin   between   notbetween   empty
+
+        14、资源文件加载
+        <script type='text/javascript' src='/static/js/common.js'>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+
+        上面的简化内容为下面的：
+        {load href="/static/js/common.js" /}
+        {load href="/static/css/style.css" /}
+
+        15、使用原生PHP语句标签{php}{/php}
+
+
+
 
 
 

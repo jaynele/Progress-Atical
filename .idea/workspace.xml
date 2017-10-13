@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c0a1fdd-28a9-4c33-9d5a-27118085a41e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frame/tp/tp5_explain.php" afterPath="$PROJECT_DIR$/Frame/tp/tp5_explain.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +37,8 @@
       <file leaf-file-name="tp5_explain.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Frame/tp/tp5_explain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35752213">
-              <caret line="550" column="26" selection-start-line="550" selection-start-column="26" selection-end-line="550" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.6035398">
+              <caret line="625" column="33" selection-start-line="625" selection-start-column="33" selection-end-line="625" selection-end-column="33" />
               <folding>
                 <element signature="e#6#85#0#PHP" expanded="true" />
               </folding>
@@ -267,7 +266,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Frame/tp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../0925NewTest/zmn_br" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -735,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frame/tp/tp5_explain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35752213">
-          <caret line="550" column="26" selection-start-line="550" selection-start-column="26" selection-end-line="550" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.6035398">
+          <caret line="625" column="33" selection-start-line="625" selection-start-column="33" selection-end-line="625" selection-end-column="33" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
           </folding>
