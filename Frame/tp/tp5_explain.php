@@ -14,6 +14,35 @@ echo "
     2、强制模式
     'url_route_on'  		=>  true,
     'url_route_must'		=>  true,
+（请求信息）
+    (1)获取request路径信息
+    可以使用\think\Request类，
+    $request = Request::instance();
+    echo "当前模块名称是" . $request->module();
+    echo "当前控制器名称是" . $request->controller();
+    echo "当前操作名称是" . $request->action();"
+    （2）变量是否设置
+    input('?get.id');
+    input('?post.name');
+    （3）获取某个变量
+    Request::instance()->get('id'); // 获取某个get变量
+    Request::instance()->get(); // 获取所有的get变量（经过过滤的数组）
+    input('get.id');
+    input('get.');
+    input('post.name');
+    input('post.');
+    input('session.user_id');
+    input('session.');
+    input('cookie.user_id');
+    input('cookie.');
+    （4）判断是否是get请求
+    if (request()->isGet())；
+    （5）判断是否是post请求
+    if (request()->isPost());
+    (6)判断是否是Ajax请求
+    if (request()->isAjax())
+
+
 （二）控制器
 （1）
 继承think下面的控制器

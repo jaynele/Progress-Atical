@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9c0a1fdd-28a9-4c33-9d5a-27118085a41e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frame/tp/tp5_explain.php" afterPath="$PROJECT_DIR$/Frame/tp/tp5_explain.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +38,15 @@
       <file leaf-file-name="tp5_explain.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Frame/tp/tp5_explain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6035398">
-              <caret line="625" column="33" selection-start-line="625" selection-start-column="33" selection-end-line="625" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.94336283">
+              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
               <folding>
                 <element signature="e#6#85#0#PHP" expanded="true" />
+                <marker date="1507864803238" expanded="true" signature="1280:1315" placeholder="select * fro..think_user..." />
+                <marker date="1507864803238" expanded="true" signature="1340:1387" placeholder="insert into ..." />
+                <marker date="1507864803238" expanded="true" signature="1455:1492" placeholder="select * fro..think_user..." />
+                <marker date="1507864803238" expanded="true" signature="6945:6974" placeholder="SELECT name ..think_user_1..." />
+                <marker date="1507864803238" expanded="true" signature="7005:7034" placeholder="SELECT name ..think_user_2..." />
               </folding>
             </state>
           </provider>
@@ -164,7 +170,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,6 +268,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,7 +343,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13670695" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14123867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -672,9 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65132743">
           <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -696,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3681416">
           <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0">
           <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39646018">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,10 +734,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frame/tp/tp5_explain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6035398">
-          <caret line="625" column="33" selection-start-line="625" selection-start-column="33" selection-end-line="625" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.94336283">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
+            <marker date="1507864803238" expanded="true" signature="1280:1315" placeholder="select * fro..think_user..." />
+            <marker date="1507864803238" expanded="true" signature="1340:1387" placeholder="insert into ..." />
+            <marker date="1507864803238" expanded="true" signature="1455:1492" placeholder="select * fro..think_user..." />
+            <marker date="1507864803238" expanded="true" signature="6945:6974" placeholder="SELECT name ..think_user_1..." />
+            <marker date="1507864803238" expanded="true" signature="7005:7034" placeholder="SELECT name ..think_user_2..." />
           </folding>
         </state>
       </provider>
