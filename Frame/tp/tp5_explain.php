@@ -40,7 +40,7 @@ echo "
     （5）判断是否是post请求
     if (request()->isPost());
     (6)判断是否是Ajax请求
-    if (request()->isAjax())
+    if (request()->isAjax());
 
 
 （二）控制器
