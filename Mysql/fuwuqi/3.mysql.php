@@ -56,6 +56,21 @@ possible_keys: PRIMARY
             Using temporary:需要优化查询，创建临时表进行存储结果，通常发生在orderBy时候
 
 
+      二、count  max 的优化方法
+        （一）查找最后的支付时间
+        (1)explain select max(create_time) from pay_info;
+        这个就非常糟糕
+        （2）所以需要在字段create_time建立索引
+        create index idx_create_time on pay_info(create_time);
+        索引是顺序排序的
+
+        对于max的查询可以建立索引
+
+        （二）查16-17年的票数
+            select count(year = 16 or year = 17)
+
+
+
 
 
 
