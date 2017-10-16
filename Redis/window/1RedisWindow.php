@@ -26,7 +26,18 @@ redis.windows.conf          # 配置文件
 
 当然，还有一个 RedisService.docx 文件，看似是一些启动和安装服务的说明文档,但是照着他的指示来,你就会死的很惨，莫名其妙的死了，不知道原因。
 
+1、进入到该目录，执行：
+   redis-server.exe redis.windows.conf
 
+2、看到图标，服务端就ok了
+
+3、然后从客户端进行测试
+
+4、双击打开 redis-cli.exe , 如果不报错,则连接上了本地服务器,然后测试，比如 set命令，get命令:
+
+5、set  后，然后能get到值  就ok了
+
+6、通过服务器地址及端口就可以访问了
 
 
 
