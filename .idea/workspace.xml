@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c0a1fdd-28a9-4c33-9d5a-27118085a41e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mysql/fuwuqi/3.mysql.php" afterPath="$PROJECT_DIR$/Mysql/fuwuqi/3.mysql.php" />
-    </list>
+    <list default="true" id="9c0a1fdd-28a9-4c33-9d5a-27118085a41e" name="Default" comment="" />
     <ignored path="git.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -49,8 +47,8 @@
       <file leaf-file-name="3.mysql.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mysql/fuwuqi/3.mysql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94336283">
-              <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.7734513">
+              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -712,8 +710,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mysql/fuwuqi/3.mysql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94336283">
-          <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.7734513">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
           <folding />
         </state>
       </provider>
