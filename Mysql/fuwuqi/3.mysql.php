@@ -67,7 +67,11 @@ possible_keys: PRIMARY
         对于max的查询可以建立索引
 
         （二）查16-17年的票数
-            select count(year = 16 or year = 17)
+            select count(year = 16 or null)，count (year = 17 or null) from table;
+            count(*) 与count(id)区别：count(id)过滤了id 值为null的计数
+
+       三、子查询优化
+
 
 
 
