@@ -1,0 +1,20 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: 123
+ * Date: 2017/10/19
+ * Time: 21:10
+ */
+echo '
+
+1¡¢×Ö·û´®·­×ª
+    strrev
+
+2¡¢×Ö·û´®³¤¶È
+    strlen
+
+3¡¢ÖÐÎÄ×Ö·û½ØÈ¡ÎÞÂÒÂë
+    mb_substr
+
+
+';
