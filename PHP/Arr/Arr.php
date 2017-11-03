@@ -5,7 +5,7 @@
  * Date: 2017/10/21
  * Time: 14:25
  */
-echo '
+echo "
 
 1¡¢array_multisort($v1,SORT_ASC,$v2,SORT_DEST,$data);
   $data[] = array('age'=>20,'weight'=>22,'height'=>24);
@@ -198,4 +198,4 @@ echo '
 
 
 
-';
+";
