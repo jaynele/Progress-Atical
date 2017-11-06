@@ -21,4 +21,5 @@ echo '官网查yii,composer下载，';
 
 //yii2的面向对象编程思想
 //layout组件、模板引擎、ActiveForm验证组件，Validation验证组件
-//url地址生成组件、Html标签生成组件、Pagination分页组件
+//url地址生成组件、Html标签生成组件、Pagination分页组件，第五章内容
+
