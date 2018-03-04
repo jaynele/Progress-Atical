@@ -6,10 +6,15 @@
  * Time: 21:55
  */
 
-//获取浏览当前页面的用户的ip
+//鑾峰彇娴忚褰撳墠椤甸潰鐨勭敤鎴风殑ip
 var_dump($_SERVER['REMOTE_ADDR']);
 var_dump(getenv('REMOTE_ADDR'));
 
-//获取服务端ip
+//鑾峰彇鏈嶅姟绔痠p
 var_dump($_SERVER['SERVER_ADDR']);
 var_dump(gethostbyname('www.baidu.com'));
+
+ip2long();
+long2ip();
+ 
+  
