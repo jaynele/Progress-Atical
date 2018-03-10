@@ -70,7 +70,11 @@ php -r "unlink('composer-setup.php');"
 //path环境变量
 //运行composer global require laravel/valet就安装好了
 //valet install运行安装其他，这个时候可以新开一个窗口来运行，这里可以看到nginx等都装好来，
-//在家目录下创建一个sites目录，进入.测试valet,运行valet park，这个sites可以作为浏览器访问都根目录。运行命令laravel new task,浏览器里输入地址task.dev就可以访问这个laravel项目。
+//在家目录下创建一个sites目录，进入sites.测试valet,运行valet park，这个sites可以作为浏览器访问都根目录。运行命令laravel new task,浏览器里输入地址task.dev就可以访问这个laravel项目。valet domain .test 然后在浏览器里打开就可以了。打开sublim,打开task项目，编辑env,配置数据库。iterm2里运行 mysql -uroot -p,建数据库，create database task,exit,运行完之后，可以运行php artisan migrate,
+
+
+//Suquel Pro 好的mysql管理工具
+//mac 下的navicat premium   https://pan.baidu.com/s/1o7lxBOe   txcw,就可以用navicat了。
 
 
 
