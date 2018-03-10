@@ -74,7 +74,20 @@ php -r "unlink('composer-setup.php');"
 
 
 //Suquel Pro 好的mysql管理工具
-//mac 下的navicat premium   https://pan.baidu.com/s/1o7lxBOe   txcw,就可以用navicat了。
+//mac 下的navicat premium   https://pan.baidu.com/s/1o7lxBOe   txcw,就可以用navicat了。到sequelpro.com官网,download,图形界面里，输入name为localhost,地址127.0.0.1，用户root，添加到favourite里，选择数据库就可以了。
+
+
+//laravel生产环境 homestead
+//官网https://laravel.com/docs/5.6/homestead   文档，依托虚拟机实现。开始：点击：Installation & Setup，下载 VirtualBox 5.2， Vagrant。这两个软件右键打开链接就可以。分别：https://www.virtualbox.org/wiki/Downloads    https://www.vagrantup.com/downloads.html  都选os。一路继续安装就可以。iterm里运行vagrant，然后添加virbox,运行vagrant box add laravel/homestead，看virtualbox是序号几就输入便可以,下载慢。另外方法：运行   vagrant box add laravel/homestead ~/Downloads/homestead-2.0.0.box    这就先在百度云里先下载这个东西。   运行：vagrant box list    ,ok,然后运行：  cd ~/.vagrant.d/boxes/laravel-VAGRANTSLASH-homestead
+运行：ls   看到0，接下来：1. 添加一个名为 metadata_url 的文件，里面只写上
+
+https://atlas.hashicorp.com/laravel/homestead
+要注意空格什么的也不能有
+2.把看到的 0 或 0.0 这个目录修改为你的 box 版本号，比如这里的就是第一步的 2.0.0
+执行 vagrant up
+
+
+
 
 
 
