@@ -1,0 +1,70 @@
+<?php
+
+//mac从零开始配置开发环境
+
+//chrome浏览器
+//command + 空格  呼出safari打开https://www.google.com/browser/desktop/index.html download 打开 拖拽 推出设备，打开chrome设为默认浏览器，登录google个人账号，同步插件。后续需要更好使用chrome的调试工具，安装插件，jsonFormatter  Momentum
+
+
+//Alfred电脑工具管理
+//Alfred工具的管理中可以使用，先command + 空格 搜索Chrome打开https://www.alfredapp.com官网,download就可以使用基本功能，设置commond + d 快捷键，设置主题风格便可以投入使用
+
+
+//iterm2和zshell
+//有terminal,但iterm2命令行也可以更好看，结合zshell使用。alfred搜chrome打开搜https：//www.iterm2.com 这里download打开拖拽，Alfred打开,iterm2就可以投入使用
+//zshell结合iterm2使用。alfred打开Chrome，打开https://www.github.com/robbyrussell/oh-my-zsh 中用curl方式安装，提示不能安装命令就自动获取安装，输入密码便可以显示配置成功。注意~/.zshrc这个文件。vim 打开~/.zshrc配置插件和主题.vim ~/.zshrc  theme来改变主题，iterm2可以在左上角配置全屏快捷键command + enter 在appearance里设置,同时配置左上角单引号作为显示隐藏iterm2的快捷键这个在key里设置，还可以设置命令行字体大小以及行间距在profiles里进行设置大小15-18即可，字体pt-mono，行间距150就可以。command + q 强制退出，再次登录会显示上次登录时间，可以touch .hushlogin,建立一个隐藏文件，这样下次登录就不会再出现上次登录时间.
+
+
+//sublim
+//安装和美化sublim.经常用到sublim和vim,phpstorm。chrome打开https://www.sublimetext.com/3.拉一个项目进行配置。mac解压工具用Unarchiver，app store就有。tool里安装package control。快捷键command + shift + p来安装插件。command + p查找文件和类等。pci搜索安装package control,弹框里输入material找到material theme安装主题，安装 a file icon,点击install.
+
+
+//phpstorm
+//phpstorm配置,alfred搜索phpstorm eap，没有就跳转安装。view下的status bar可以关掉，navagation bar也可以关掉,command + ,可以打开配置跟sublim这点一样,搜browser，关掉浏览器显示，并apply.搜plugins安装一些插件，找brows reopens，点开安装.env file support,安装material theme UI
+安装color ide,安装ideavim,设置页面editor,color scheme,general等便可以设置
+
+
+//homebrew
+//借助homebrew,https://brew.sh/这里可以点击下载，是一个软件的包管理，可以轻松安装东西，复制/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+到iterm2命令行里回车安装输入密码成功后，输入命令brew -h 可以看到已经起作用,brew命令的使用有例子
+  brew search [TEXT|/REGEX/]
+  brew (info|home|options) [FORMULA...]
+  brew install FORMULA...
+  brew update
+  brew upgrade [FORMULA...]
+  brew uninstall FORMULA...
+  brew list [FORMULA...]
+
+
+//php7和mysql
+//输入brew search php71,然后用其中一个便可以，brew install homebrew/php/php71,就可以把php71安装好了，php -v 查看版本,接下来安装mysql，brew install mariadb 回车就可以装好,mysql开机启动brew services start mariadb
+  
+  
+//安装node.js和npm
+//官网nodejs.org/en/下载，安装，打开新的iterm2窗口，node -v,查看版本，可以看到已经安装完毕,npm -v 看到npm版本，进入桌面一个laravel项目，npm install回车，安装npm 的package包就可以，
+
+
+//安装yarn
+//还可以yarn来安装，官网yarnpkg.com/zh-Hans/,brew install yarn就可以安装yarn了，这里依赖node。输入yarn回车,可配置npm,运行npm run dev
+
+
+//composer
+//iterm2里直接composer是没作用的，来到官网getcomposer.org,   
+download
+复制
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+到iterm2里，这样就安装好了，运行 php composer.phar,能看到composer的命令。命令简洁，只用composer就好，可以这样设置 mv composer.phar /usr/local/bin/composer 。然后直接运行composer就好了。
+
+
+//laravel
+//打开官网packagist.org/,搜索laravel/installer,也可以laravel.com官网上，composer global require "laravel/installer"，把laravel下载下来，就可以使用laravel命令了，这样laravel就安装好了。但是安装到.composer目录里，不能直接用laravel命令，需要配置，vim ~/.zshrc 运行，第二行#去掉，加上一个环境～/.composer/vendor/bin:就可以保存退出，然后新输入laravel，看是否起作用。新开一个窗口,运行laravel就可以了。laravel new blog可 安装一个目录名是blog的laravel的项目
+
+
+
+
+
+
+
