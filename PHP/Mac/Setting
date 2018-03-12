@@ -78,8 +78,90 @@ php -r "unlink('composer-setup.php');"
 
 
 //laravel生产环境 homestead
-//官网https://laravel.com/docs/5.6/homestead   文档，依托虚拟机实现。开始：点击：Installation & Setup，下载 VirtualBox 5.2， Vagrant。这两个软件右键打开链接就可以。分别：https://www.virtualbox.org/wiki/Downloads    https://www.vagrantup.com/downloads.html  都选os。一路继续安装就可以。iterm里运行vagrant，然后添加virbox,运行vagrant box add laravel/homestead，看virtualbox是序号几就输入便可以,下载慢。
+//官网https://laravel.com/docs/5.6/homestead   文档，依托虚拟机实现。开始：点击：Installation & Setup，下载 VirtualBox 5.2， Vagrant。这两个软件右键打开链接就可以。分别：https://www.virtualbox.org/wiki/Downloads    https://www.vagrantup.com/downloads.html  都选os。一路继续安装就可以。iterm里运行vagrant，然后添加virbox,运行vagrant box add laravel/homestead，看virtualbox是序号几就输入便可以,下载慢。下载好之后运行git clone https://github.com/laravel/homestead.git ~/Homestead，Mac os 自带有git,git --version可以查看版本，运行命令，cd ~/Homestead，运行git checkout v7.2.0，运行bash init.sh，配置Homestead.yaml，
+确定ssh-key存在，运行：ssh-keygen -t rsa -C “##@##.com”
+vim /etc/ssh/ssh_config
+1
+找到
 
+#   IdentityFile ~/.ssh/identity
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+1
+2
+3
+把前面#去掉，然后在 IdentityFile 后填写你用来执行ssh时所用的密钥
+配置时家目录下面建立code文件夹，
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/code
+      to: /home/vagrant/code
+
+sites:
+    - map: code.app
+      to: /home/vagrant/code/codecasts/public
+      
+这里code下面有个codecasts,所以code目录下面建立codecasts项目，所以运行laravel new codecasts,来创建项目。
+如果改了homestead.yaml 配置，重新加载nginx,需要运行vagrant reload --provision，
+配置hosts文件，mac os里，vim编辑sudo vim /etc/hosts  添加192.168.10.10  code.app
+运行vagrant up 成功
+
+
+//homestead 工作流程
+//文档https://laravel.com/docs/5.6/homestead#daily-usage
+//sudo vim ~/.zshrc
+//添加
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
+//开心iterm新窗口，可以直接使用homestead命令里
+//运行homestead ssh,进入ubuntu系统
+//多项目管理，yaml文件里配置api项目，hosts文件里添加，code文件夹下运行laravel new api，就可以添加项目
+//重启homestead，  vagrant reload --provision  浏览器访问地址
+//homestead 链接数据库，打开项目，配置env，数据库用户名密码不用更改，建立新的数据库连接，库名：homestead,用户：homestead,密码：secret，端口：33060，查看连接信息就可以看到是ubuntu类型服务器。建立api数据库，建表，需要mac里进入到homestead虚拟机里，进入项目，运行php artisan migrate，本地和虚拟机的项目要区分好，虚拟机，要进入虚拟机里操作数据库。
+
+
+//vim配置
+//draculatheme.com
+//编辑配置 家目录下面vimrc  添加syntax on,保存
+//上面就可以识别文件高亮，运行vim ~/.zshrc,就可以看到高亮
+//(1)vimrc的配置如下：
+https://gist.coding.net/u/jellybool/
+内容：
+set nocompatible
+syntax on
+set t_CO=256
+set linespace=16
+set autowriteall
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set backspace=indent,eol,start
+(2)上面官网，配置iterm, 进入桌面，运行git clone https://github.com/dracula/iterm.git  ，打开iterm配置 command + , ，在profile里，(1)color右下角，选import桌面上的那个东西，然后应用dracula，(2)general里配置previous use,
+
+
+git简单命令配置
+.zshrc 里添加 source ~/.alias
+添加.alias文件，里面添加git配置信息如下：
+alias gs="git status"
+alias gc="git commit -m "
+alias gaa="git add ."
+alias gp="git push"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'"
+保存退出
+进入git文件，运行source ~/.zshrc,然后就可以用git配置的命令了 gl等。
+
+
+iterm2命令行自动提示
+地址：github.com/zsh-users/zsh-autosuggestions
+oh-my-zsh下载（1）运行命令：git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+（2）.zshrc里添加plugins=(zsh-autosuggestions)  搜plugins 一个空格添加zsh-autosuggestions,保存退出，就可以使用了。
 
 
 
