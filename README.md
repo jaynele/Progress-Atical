@@ -54,5 +54,5 @@ Dependency Manager for PHP
   <img src="https://draculatheme.com/assets/img/icons/dracula.svg" alt="Oh My Zsh" width="200" >
   </a>
 </p>
-A dark theme for
+A dark theme for other tools
 
