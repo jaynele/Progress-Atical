@@ -190,3 +190,244 @@ groupmod 选项 用户组
 newgrp root
 这条命令将当前用户切换到root用户组，前提条件是root用户组确实是该用户的主组或附加组。类似于用户账号的管理，用户组的管理也可以通过集成的系统管理工具来完成。
 
+
+Linux 的 Shell 种类众多
+
+#!/bin/bash
+echo "Hello World !"
+
+chmod +x ./test.sh  #使脚本具有执行权限
+./test.sh  #执行脚本
+
+Shell 变量
+
+your_name="runoob.com"
+
+your_name="qinjx"
+echo $your_name
+echo ${your_name}
+
+for skill in Ada Coffe Action Java; do
+    echo "I am good at ${skill}Script"
+done
+
+只读变量
+#!/bin/bash
+myUrl="http://www.w3cschool.cc"
+readonly myUrl
+myUrl="http://www.runoob.com"
+
+unset variable_name
+
+#!/bin/sh
+myUrl="http://www.runoob.com"
+unset myUrl
+echo $myUrl
+
+your_name="qinjx"
+greeting="hello, "$your_name" !"
+greeting_1="hello, ${your_name} !"
+echo $greeting $greeting_1
+
+string="abcd"
+echo ${#string} #输出 4
+
+string="runoob is a great site"
+echo ${string:1:4} # 输出 unoo
+
+数组名=(值1 值2 ... 值n)
+
+# 取得数组元素的个数
+length=${#array_name[@]}
+# 或者
+length=${#array_name[*]}
+# 取得数组单个元素的长度
+lengthn=${#array_name[n]}
+
+以"#"开头的行就是注释，会被解释器忽略
+
+我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n
+
+echo "Shell 传递参数实例！";
+echo "执行的文件名：$0";
+echo "第一个参数为：$1";
+echo "第二个参数为：$2";
+echo "第三个参数为：$3";
+
+$#	传递到脚本的参数个数
+$*	以一个单字符串显示所有向脚本传递的参数。
+如"$*"用「"」括起来的情况、以"$1 $2 … $n"的形式输出所有参数。
+$$	脚本运行的当前进程ID号
+$!	后台运行的最后一个进程的ID号
+$@	与$*相同，但是使用时加引号，并在引号中返回每个参数。
+如"$@"用「"」括起来的情况、以"$1" "$2" … "$n" 的形式输出所有参数。
+$-	显示Shell使用的当前选项，与set命令功能相同。
+$?	显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
+
+echo "-- \$* 演示 ---"
+for i in "$*"; do
+    echo $i
+done
+
+echo "-- \$@ 演示 ---"
+for i in "$@"; do
+    echo $i
+done
+
+val=`expr 2 + 2`
+echo "两数之和为 : $val"
+
++	加法	`expr $a + $b` 结果为 30。
+-	减法	`expr $a - $b` 结果为 -10。
+*	乘法	`expr $a \* $b` 结果为  200。
+/	除法	`expr $b / $a` 结果为 2。
+%	取余	`expr $b % $a` 结果为 0。
+=	赋值	a=$b 将把变量 b 的值赋给 a。
+==	相等。用于比较两个数字，相同则返回 true。	[ $a == $b ] 返回 false。
+!=	不相等。用于比较两个数字，不相同则返回 true。	[ $a != $b ] 返回 true。
+
+-eq	检测两个数是否相等，相等返回 true。	[ $a -eq $b ] 返回 false。
+-ne	检测两个数是否相等，不相等返回 true。	[ $a -ne $b ] 返回 true。
+-gt	检测左边的数是否大于右边的，如果是，则返回 true。	[ $a -gt $b ] 返回 false。
+-lt	检测左边的数是否小于右边的，如果是，则返回 true。	[ $a -lt $b ] 返回 true。
+-ge	检测左边的数是否大于等于右边的，如果是，则返回 true。	[ $a -ge $b ] 返回 false。
+-le	检测左边的数是否小于等于右边的，如果是，则返回 true。	[ $a -le $b ] 返回 true。
+
+!	非运算，表达式为 true 则返回 false，否则返回 true。	[ ! false ] 返回 true。
+-o	或运算，有一个表达式为 true 则返回 true。	[ $a -lt 20 -o $b -gt 100 ] 返回 true。
+-a	与运算，两个表达式都为 true 才返回 true。	[ $a -lt 20 -a $b -gt 100 ] 返回 false。
+
+&&	逻辑的 AND	[[ $a -lt 100 && $b -gt 100 ]] 返回 false
+||	逻辑的 OR	[[ $a -lt 100 || $b -gt 100 ]] 返回 true
+
+=	检测两个字符串是否相等，相等返回 true。	[ $a = $b ] 返回 false。
+!=	检测两个字符串是否相等，不相等返回 true。	[ $a != $b ] 返回 true。
+-z	检测字符串长度是否为0，为0返回 true。	[ -z $a ] 返回 false。
+-n	检测字符串长度是否为0，不为0返回 true。	[ -n $a ] 返回 true。
+str	检测字符串是否为空，不为空返回 true。	[ $a ] 返回 true。
+
+-b file	检测文件是否是块设备文件，如果是，则返回 true。	[ -b $file ] 返回 false。
+-c file	检测文件是否是字符设备文件，如果是，则返回 true。	[ -c $file ] 返回 false。
+-d file	检测文件是否是目录，如果是，则返回 true。	[ -d $file ] 返回 false。
+-f file	检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。	[ -f $file ] 返回 true。
+-g file	检测文件是否设置了 SGID 位，如果是，则返回 true。	[ -g $file ] 返回 false。
+-k file	检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。	[ -k $file ] 返回 false。
+-p file	检测文件是否是有名管道，如果是，则返回 true。	[ -p $file ] 返回 false。
+-u file	检测文件是否设置了 SUID 位，如果是，则返回 true。	[ -u $file ] 返回 false。
+-r file	检测文件是否可读，如果是，则返回 true。	[ -r $file ] 返回 true。
+-w file	检测文件是否可写，如果是，则返回 true。	[ -w $file ] 返回 true。
+-x file	检测文件是否可执行，如果是，则返回 true。	[ -x $file ] 返回 true。
+-s file	检测文件是否为空（文件大小是否大于0），不为空返回 true。	[ -s $file ] 返回 true。
+-e file	检测文件（包括目录）是否存在，如果是，则返回 true。	[ -e $file ] 返回 true。
+
+文件可读
+文件可写
+文件可执行
+文件为普通文件
+文件不是个目录
+文件不为空
+文件存在
+
+cd /bin
+if test -e ./notFile -o -e ./bash
+then
+    echo '至少有一个文件存在!'
+else
+    echo '两个文件都不存在'
+fi
+
+if condition
+then
+    command1 
+    command2
+    ...
+    commandN 
+fi
+
+if condition
+then
+    command1 
+    command2
+    ...
+    commandN
+else
+    command
+fi
+
+if condition1
+then
+    command1
+elif condition2 
+then 
+    command2
+else
+    commandN
+fi
+
+a=10
+b=20
+if [ $a == $b ]
+then
+   echo "a 等于 b"
+elif [ $a -gt $b ]
+then
+   echo "a 大于 b"
+elif [ $a -lt $b ]
+then
+   echo "a 小于 b"
+else
+   echo "没有符合的条件"
+fi
+
+for var in item1 item2 ... itemN
+do
+    command1
+    command2
+    ...
+    commandN
+done
+
+while condition
+do
+    command
+done
+
+while true
+do
+    command
+done
+
+until condition
+do
+    command
+done
+
+case 值 in
+模式1)
+    command1
+    command2
+    ...
+    commandN
+    ;;
+模式2）
+    command1
+    command2
+    ...
+    commandN
+    ;;
+esac
+
+funWithReturn(){
+    echo "这个函数会对输入的两个数字进行相加运算..."
+    echo "输入第一个数字: "
+    read aNum
+    echo "输入第二个数字: "
+    read anotherNum
+    echo "两个数字分别为 $aNum 和 $anotherNum !"
+    return $(($aNum+$anotherNum))
+}
+funWithReturn
+echo "输入的两个数字之和为 $? !"
+
+
+
