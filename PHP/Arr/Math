@@ -1,0 +1,29 @@
+<?php 
+//十进制10转二进制 3 1 1010
+echo decbin(10);
+//平方根。
+echo "\n".sqrt(4);
+//返回随机整数。
+echo "\n".rand(1,4);
+//	返回 x 的 y 次方。
+echo "\n".pow(2, 3);
+//返回最小值。
+echo "\n".min(array(3,2,6,5));
+//返回最大值。
+echo "\n".max(array(3,2,6,5));
+//判断是否为合法数值。
+echo "\n".is_nan(3.4);
+//把十六进制转换为十进制。 
+echo hexdec();
+//	向下舍入为最接近的整数。
+echo floor();
+//把十进制转换为十六进制。
+echo dexhex();
+//把十进制转换为二进制。
+echo dexbin();
+//向上舍入为最接近的整数。
+echo ceil();
+//把二进制转换为十进制。
+echo bindec();
+//绝对值。
+echo abs();
