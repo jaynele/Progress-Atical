@@ -1,0 +1,45 @@
+<?php
+$arr = array(
+	array(
+		'name'=>'apple',
+		'fileInfo'=>array(
+			array(
+					'name'=>'apple1',
+					'fileInfo'=>'file1',
+			),
+			array(
+					'name'=>'apple2',
+					'fileInfo'=>'file2',
+			),	
+		),
+	),
+		array(
+		'name'=>'pink',
+		'fileInfo'=>array(
+			array(
+					'name'=>'pink1',
+					'fileInfo'=>'filepink1',
+			),
+			array(
+					'name'=>'pink2',
+					'fileInfo'=>'filepink2',
+			),	
+		),
+	),
+);
+
+function getInfo($arr, $l = 0) {
+	foreach ($arr as $v) {
+		$tim = $l;
+		$v1 = array();
+		$v1['l'] = $l;
+		$v1['name'] = $v['name'];
+		$tree[] = $v1;
+		if (is_array($v['fileInfo'])) {
+			$tree = array_merge($tree,getInfo($v['fileInfo'],$l+=1));
+		}
+		$l = $tim;
+	}
+	return $tree;
+}
+var_dump(getInfo($arr,$l = 0));
