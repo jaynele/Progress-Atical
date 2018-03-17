@@ -1,0 +1,19 @@
+<?php  
+function getInfo($num,$l) {
+	$n = $num / $l;
+	if ($n > 0) {
+		$i = 1;
+	}
+	while ($n >= $l) {
+		$n = $n / $l;
+		if ($n > 0) {
+			$i += 1;
+		}
+	}
+	$res = pow(10, $i);
+	if (($num - pow($l, $i)) >= $l) {
+		$res += getInfo($num - pow($l, $i),$l);
+	}
+	return $res;
+}
+echo getInfo(10,2);
