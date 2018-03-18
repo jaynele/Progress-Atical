@@ -1,0 +1,28 @@
+<?php 
+//末尾0的个数
+function getInfo($num) {
+	$res = 1;
+	while ($num >= 1) {
+		if (($num - 1) >= 1) {
+			$res *= ($num * ($num - 1));
+		} else {
+			$res *= $num;
+		}
+				
+		$num -= 2;
+	}
+	if (($res % 10) == 0) {
+		$i = 0;
+		while (($res % 10) === 0) {
+			$res /= 10;
+			$i += 1;
+		}
+		return $i;
+	} else {
+		return 0;
+	}
+}
+echo getInfo(10);
+
+
+
