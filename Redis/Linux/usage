@@ -1,0 +1,20 @@
+<?php
+redis.io
+wget
+make
+yum tcl
+make install
+cp conf
+service
+cli
+ok
+
+commands
+set
+get
+keys *
+keys pattern
+type key
+randomkey
+rename key
+del key
