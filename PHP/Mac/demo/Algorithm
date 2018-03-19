@@ -24,5 +24,20 @@ function getInfo($num) {
 }
 echo getInfo(10);
 
+//冒泡
+function getSort($arr) {
+	$num = count($arr);
+	for ($i = 0;$i < $num;$i++) {
+		for ($j = 1;$j < ($num - 1) - $i;$j++) {
+			if ($arr[($j-1)] > $arr[$j] ) {
+				$tmp = $arr[$j];
+				$arr[$j] = $arr[$j-1];
+				$arr[$j-1] = $tmp;
+			}
+		}
+	}
+	return $arr;
+}
 
+var_dump(getSort(array (4,6,1,8)));
 
