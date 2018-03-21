@@ -430,4 +430,9 @@ funWithReturn
 echo "输入的两个数字之和为 $? !"
 
 
+vimware（workstation 12 pro） + centos  = 一个干净的linux环境
+date -s "YYYY-MM-DD  hh:mm:ss" &&hwclock --systohc来修改系统时间
+yum install wget
+wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
+lnmp.org 也可以一键安装 使用lnmp命令
 
