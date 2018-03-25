@@ -7,89 +7,93 @@
  */
 echo '
 
-mysql  ĞèÇó·ÖÎö   £ºÊı¾İÊÇÊ²Ã´£¬Êı¾İÓĞÊ²Ã´ÌØĞÔ
-       Âß¼­Éè¼Æ   £ºÍ¨¹ıERÍ¼,ÊµÌåÓëÊµÌåÖ®¼äµÄ¹ØÏµ
-       ÎïÀíÉè¼Æ   £ºÑ¡ÔñÊı¾İ¿âµÄ¹¤¾ß£¬È·¶¨Êı¾İ¿âÃû£¬±íÃû£¬×Ö¶ÎÃû×ñÑ­µÄÔ­Ôò£¬È·ÈÏ×Ö¶ÎµÄÊı¾İÀàĞÍ£¬Òª½¨Á¢±í¹ØÏµÊı¾İ±í£¬Êı¾İ±íÖĞ¾¡Á¿ÉÙÓÃÍâ¼ü
-                   ÒòÎª²åÈëÊı¾İÊ±ºò£¬¶¼Òª¼ì²âÕâ¸öÍâ¼üÊÇ·ñÔÚÁíÍâÒ»¸ö±íÖĞ´æÔÚ£¬Ó°ÏìĞ§ÂÊ
-       ĞÔÄÜµ÷ÓÅ   £º´¹Ö±²ğ·Ö£¬Ë®Æ½²ğ·Ö±í
+mysql  éœ€æ±‚åˆ†æ   ï¼šæ•°æ®æ˜¯ä»€ä¹ˆï¼Œæ•°æ®æœ‰ä»€ä¹ˆç‰¹æ€§
+       é€»è¾‘è®¾è®¡   ï¼šé€šè¿‡ERå›¾,å®ä½“ä¸å®ä½“ä¹‹é—´çš„å…³ç³»
+       ç‰©ç†è®¾è®¡   ï¼šé€‰æ‹©æ•°æ®åº“çš„å·¥å…·ï¼Œç¡®å®šæ•°æ®åº“åï¼Œè¡¨åï¼Œå­—æ®µåéµå¾ªçš„åŸåˆ™ï¼Œç¡®è®¤å­—æ®µçš„æ•°æ®ç±»å‹ï¼Œè¦å»ºç«‹è¡¨å…³ç³»æ•°æ®è¡¨ï¼Œæ•°æ®è¡¨ä¸­å°½é‡å°‘ç”¨å¤–é”®
+                   å› ä¸ºæ’å…¥æ•°æ®æ—¶å€™ï¼Œéƒ½è¦æ£€æµ‹è¿™ä¸ªå¤–é”®æ˜¯å¦åœ¨å¦å¤–ä¸€ä¸ªè¡¨ä¸­å­˜åœ¨ï¼Œå½±å“æ•ˆç‡
+       æ€§èƒ½è°ƒä¼˜   ï¼šå‚ç›´æ‹†åˆ†ï¼Œæ°´å¹³æ‹†åˆ†è¡¨
+       
+å­˜å‚¨å¼•æ“    
+æ•°æ®åº“é…ç½®
+æ•°æ®åº“è¡¨ç»“æ„è®¾è®¡å’Œsqlä¼˜åŒ–
 
 
-sql   Ìí¼Ó£º   insert into zmn_user (user_name,user_sex) values ("lili","ÄĞ"),("ii","nv"),("oo","kj");
-      ĞŞ¸Ä£º   update zmn_user set user_name = "pp" where user_id = 23;
-      É¾³ı£º   delete from zmn_user where user_id = 2;
-      ²éÑ¯£º Ò»ÁĞ¼ÆËã
+sql   æ·»åŠ ï¼š   insert into zmn_user (user_name,user_sex) values ("lili","ç”·"),("ii","nv"),("oo","kj");
+      ä¿®æ”¹ï¼š   update zmn_user set user_name = "pp" where user_id = 23;
+      åˆ é™¤ï¼š   delete from zmn_user where user_id = 2;
+      æŸ¥è¯¢ï¼š ä¸€åˆ—è®¡ç®—
             (1)select user_name,user_age + 1 from zmn_user;
-            Á½ÁĞ¼ÆËã
+            ä¸¤åˆ—è®¡ç®—
             (2)select user_math_score - user_english_score from zmn_user;
-            Á½ÁĞ¼ÆËãÍâ¼ÓÁĞµÄº¯Êı¼ÆËã
-            £¨3£©select sum(user_price * user_num) from zmn_user;
-            ****±¸×¢whereÌõ¼şÆäÊµÊÇ±í´ïÊ½ Ö»Òªµ±Ç°ĞĞÊÇÕæ£¬¾Í°Ñ¸ÃĞĞÈ¡³ö£¬±È½ÏÔËËã·ûºÍÂß¼­ÔËËã·û
-            ·Ö×éÍ³¼Æ
-            £¨4£©select cat_id,avg(user_price) from zmn_user group by cat_id;
-            ¶Ô¼ÆËã³öÀ´µÄ½á¹û½øÒ»²½É¸Ñ¡
-            £¨5£©select cat_id,sum(user_price) as user_sum_price from zmn_user having user_sum_price > 200;
-            ÓĞhavingµÄÊ±ºò£¬Èç¹û»¹ÓĞÆäËûµÄÉ¸Ñ¡Ìõ¼şwhere,ÄÇ¾ÍÏÈwhereºóhaving
+            ä¸¤åˆ—è®¡ç®—å¤–åŠ åˆ—çš„å‡½æ•°è®¡ç®—
+            ï¼ˆ3ï¼‰select sum(user_price * user_num) from zmn_user;
+            ****å¤‡æ³¨whereæ¡ä»¶å…¶å®æ˜¯è¡¨è¾¾å¼ åªè¦å½“å‰è¡Œæ˜¯çœŸï¼Œå°±æŠŠè¯¥è¡Œå–å‡ºï¼Œæ¯”è¾ƒè¿ç®—ç¬¦å’Œé€»è¾‘è¿ç®—ç¬¦
+            åˆ†ç»„ç»Ÿè®¡
+            ï¼ˆ4ï¼‰select cat_id,avg(user_price) from zmn_user group by cat_id;
+            å¯¹è®¡ç®—å‡ºæ¥çš„ç»“æœè¿›ä¸€æ­¥ç­›é€‰
+            ï¼ˆ5ï¼‰select cat_id,sum(user_price) as user_sum_price from zmn_user having user_sum_price > 200;
+            æœ‰havingçš„æ—¶å€™ï¼Œå¦‚æœè¿˜æœ‰å…¶ä»–çš„ç­›é€‰æ¡ä»¶where,é‚£å°±å…ˆwhereåhaving
             (6)select cat_id,sum(user_price) as user_sum_price from zmn_user where cat_id > 23 having user_sum_price > 200;
-            where,having¶¼ÊÇ×öÉ¸Ñ¡²éÑ¯£¬Èç¹û·Ö×éÁË£¬ÄÇÃ´Ê¹ÓÃË³ĞòÊÇwhere,having,group by
+            where,havingéƒ½æ˜¯åšç­›é€‰æŸ¥è¯¢ï¼Œå¦‚æœåˆ†ç»„äº†ï¼Œé‚£ä¹ˆä½¿ç”¨é¡ºåºæ˜¯where,having,group by
             (7)select cat_id,sum(user_price) as user_sum_price from zmn_user where cat_id > 23 having user_sum_price > 200 group by cat_id;
-            ²éÁ½ÃÅ¼°Á½ÃÅÒÔÉÏ²»¼°¸ñµÄÈËµÄÆ½¾ù³É¼¨ name,depart,score
+            æŸ¥ä¸¤é—¨åŠä¸¤é—¨ä»¥ä¸Šä¸åŠæ ¼çš„äººçš„å¹³å‡æˆç»© name,depart,score
             select name,avg(score),sum(score<60) as num from table having num >= 2  group by name;
-            °´ÕÕÒ»¸ö×Ö¶ÎÅÅĞò
-            £¨8£©select name,score from table where score > 60 order by score desc;
-            °´ÕÕÁ½¸ö¼°Á½¸öÒÔÉÏ×Ö¶ÎÅÅĞò,Èç£º°´ÕÕÃ¿¸öÈË×îĞÂÈËÅÅĞòºó£¨¼´µ¹Ğğ£©£¬È»ºó°´ÕÕÃ¿¸öÈË³É¼¨µ¹ĞğÅÅÁĞ
+            æŒ‰ç…§ä¸€ä¸ªå­—æ®µæ’åº
+            ï¼ˆ8ï¼‰select name,score from table where score > 60 order by score desc;
+            æŒ‰ç…§ä¸¤ä¸ªåŠä¸¤ä¸ªä»¥ä¸Šå­—æ®µæ’åº,å¦‚ï¼šæŒ‰ç…§æ¯ä¸ªäººæœ€æ–°äººæ’åºåï¼ˆå³å€’å™ï¼‰ï¼Œç„¶åæŒ‰ç…§æ¯ä¸ªäººæˆç»©å€’å™æ’åˆ—
             (9) select name,score,name_id from table where score > 60 order by name_id desc,score desc;
 
-            ÉÏÃæÊÇ»ù´¡µÄ²éÑ¯ ÎåÖÖ£ºwhere ¡¢having ¡¢group by ¡¢order by ¡¢limit
-            ÎåÖÖÊ¹ÓÃË³ĞòÒªÑÏ¸ñ°´ÕÕÒÔÉÏ±ÜÃâ³ö´í£¬ÆäÖĞ×öÉ¸Ñ¡£ºwhere¡¢having;·Ö×é£ºgroup by;ÅÅĞò£ºorder by;ÏŞÖÆÈ¡³öÊıÁ¿£ºlimit
+            ä¸Šé¢æ˜¯åŸºç¡€çš„æŸ¥è¯¢ äº”ç§ï¼šwhere ã€having ã€group by ã€order by ã€limit
+            äº”ç§ä½¿ç”¨é¡ºåºè¦ä¸¥æ ¼æŒ‰ç…§ä»¥ä¸Šé¿å…å‡ºé”™ï¼Œå…¶ä¸­åšç­›é€‰ï¼šwhereã€having;åˆ†ç»„ï¼šgroup by;æ’åºï¼šorder by;é™åˆ¶å–å‡ºæ•°é‡ï¼šlimit
 
-            ×Ó¾ä²éÑ¯
-            where ĞÍ×Ó²éÑ¯
-            ²éÃ¿¸öÀ¸Ä¿ÏÂ×îĞÂµÄÉÌÆ·
+            å­å¥æŸ¥è¯¢
+            where å‹å­æŸ¥è¯¢
+            æŸ¥æ¯ä¸ªæ ç›®ä¸‹æœ€æ–°çš„å•†å“
             (1) select shop_id,,shop_name,shop_price from shop where shop_id in (select max(shop_id) from shop group by cat_id);
-            from ĞÍ×Ó²éÑ¯
-            ²éÃ¿¸öÀ¸Ä¿ÏÂ×îĞÂµÄÉÌÆ·
-            £¨2£©select cat_id,shop_id,shop_name,shop_price from (select shop_id,shop_name,shop_price from shop order by cat_id,shop_id desc) as tmp
+            from å‹å­æŸ¥è¯¢
+            æŸ¥æ¯ä¸ªæ ç›®ä¸‹æœ€æ–°çš„å•†å“
+            ï¼ˆ2ï¼‰select cat_id,shop_id,shop_name,shop_price from (select shop_id,shop_name,shop_price from shop order by cat_id,shop_id desc) as tmp
             group by tmp.cat_id limit 1;
-            ²éÓĞÉÌÆ·µÄÀ¸Ä¿
-            £¨3£©select cat_id,cat_name from cat_table where exist (select shop_name,cat_id from shop where shop.cat_id = cat.cat_id);
+            æŸ¥æœ‰å•†å“çš„æ ç›®
+            ï¼ˆ3ï¼‰select cat_id,cat_name from cat_table where exist (select shop_name,cat_id from shop where shop.cat_id = cat.cat_id);
 
-            Á¬½Ó²éÑ¯
-            inner join on  Á½±í¶¼ÓĞ
-            left join on   ×ó±í¶¼ÓĞ£¬ÓÒ±íÃ»ÓĞnull´úÌæ
-            right join on  ÓÒ±í¶¼ÓĞ£¬×ó±íÃ»ÓĞnull´úÌæ
+            è¿æ¥æŸ¥è¯¢
+            inner join on  ä¸¤è¡¨éƒ½æœ‰
+            left join on   å·¦è¡¨éƒ½æœ‰ï¼Œå³è¡¨æ²¡æœ‰nullä»£æ›¿
+            right join on  å³è¡¨éƒ½æœ‰ï¼Œå·¦è¡¨æ²¡æœ‰nullä»£æ›¿
 
-            union²éÑ¯
-            sql1·µ»ØNĞĞ£¬sql2·µ»ØMĞĞ
-            sql1 union sql2 ·µ»ØN+MĞĞ£¬sql1ºÍsql2µÄÁĞÊıÓ¦¸ÃÏàµÈ£¬½á¹û»áÒÔsql1µÄÁĞÃûÎª×¼
-            ×¢Òâ£ºunion »á±È½ÏĞĞÊÇ·ñÏàµÈ£¬ÏàµÈµÄĞĞ»áºÏ²¢¡£±È½ÏµÄ¹ı³ÌÖĞ»áºÄ×ÊÔ´¡£
-            union all ĞĞ¼´Ê¹ÏàµÈ£¬Ò²²»»áºÏ²¢£¬Êµ¼ÊÖĞÓÃunion all£¬Á½±ßµÄ×Ó¾ä²»Ê¹ÓÃorder byÅÅĞò
+            unionæŸ¥è¯¢
+            sql1è¿”å›Nè¡Œï¼Œsql2è¿”å›Mè¡Œ
+            sql1 union sql2 è¿”å›N+Mè¡Œï¼Œsql1å’Œsql2çš„åˆ—æ•°åº”è¯¥ç›¸ç­‰ï¼Œç»“æœä¼šä»¥sql1çš„åˆ—åä¸ºå‡†
+            æ³¨æ„ï¼šunion ä¼šæ¯”è¾ƒè¡Œæ˜¯å¦ç›¸ç­‰ï¼Œç›¸ç­‰çš„è¡Œä¼šåˆå¹¶ã€‚æ¯”è¾ƒçš„è¿‡ç¨‹ä¸­ä¼šè€—èµ„æºã€‚
+            union all è¡Œå³ä½¿ç›¸ç­‰ï¼Œä¹Ÿä¸ä¼šåˆå¹¶ï¼Œå®é™…ä¸­ç”¨union allï¼Œä¸¤è¾¹çš„å­å¥ä¸ä½¿ç”¨order byæ’åº
 
 
 
             write:
-            (1)Ò»ÁĞ¼ÆËã
+            (1)ä¸€åˆ—è®¡ç®—
             select user_age + 1 from zmn_user;
-            £¨2£©Á½ÁĞ¼ÆËã
+            ï¼ˆ2ï¼‰ä¸¤åˆ—è®¡ç®—
             select shop_num * shop_price from shop;
-            £¨3£©Á½ÁĞ¼ÆËã+º¯Êı¼ÆËã
+            ï¼ˆ3ï¼‰ä¸¤åˆ—è®¡ç®—+å‡½æ•°è®¡ç®—
             select sum(shop_num * shop_price) from shop;
-            £¨4£©·Ö×é¼ÆËã
+            ï¼ˆ4ï¼‰åˆ†ç»„è®¡ç®—
             select cat_id,sum(shop_num * shop_price) from shop group by cat_id;
-            £¨5£©¶Ô¼ÆËã³öÀ´µÄÊı¾İ½øÒ»²½É¸Ñ¡
+            ï¼ˆ5ï¼‰å¯¹è®¡ç®—å‡ºæ¥çš„æ•°æ®è¿›ä¸€æ­¥ç­›é€‰
             select (shop_num * shop_price) as num from shop having num > 500;
-            £¨6£©¼ÆËã³öÀ´µÄÊı¾İ½øĞĞÉ¸Ñ¡£¬Íâ¼ÓÆäËûµÄÉ¸Ñ¡Ìõ¼ş
+            ï¼ˆ6ï¼‰è®¡ç®—å‡ºæ¥çš„æ•°æ®è¿›è¡Œç­›é€‰ï¼Œå¤–åŠ å…¶ä»–çš„ç­›é€‰æ¡ä»¶
             select (shop_num * shop_price) as num from shop where cat_id > 20 having num > 500;
-            £¨7£©²éÁ½ÃÅ¼°Á½ÃÅÒÔÉÏ²»¼°¸ñµÄÈËµÄÆÀ¼Û³É¼¨
+            ï¼ˆ7ï¼‰æŸ¥ä¸¤é—¨åŠä¸¤é—¨ä»¥ä¸Šä¸åŠæ ¼çš„äººçš„è¯„ä»·æˆç»©
             select name,avg(score),sum(score < 60) as num from table having num >= 2 group by name;
-            £¨8£©°´Ò»¸ö×Ö¶ÎÅÅĞò
+            ï¼ˆ8ï¼‰æŒ‰ä¸€ä¸ªå­—æ®µæ’åº
             select name,avg(score) from table order by score desc;
-            £¨9£©°´Á½¸ö×Ö¶ÎÅÅĞò
+            ï¼ˆ9ï¼‰æŒ‰ä¸¤ä¸ªå­—æ®µæ’åº
             select shop_num,shop_name from shop order by cat_id desc,shop_id desc;
-            £¨1£©×Ó¾äwhere
+            ï¼ˆ1ï¼‰å­å¥where
             select shop_name,shop_id,shop_price from shop where shop_id in (select max(shop_id) from shop group by cat_id);
-            £¨2£©×Ó¾äfrom
+            ï¼ˆ2ï¼‰å­å¥from
             select shop_name,shop_id,shop_price from (select shop_name,shop_id,shop_price from shop order by cat_id, order by shop_id desc) as tmp group by cat_id limit 1;
-            £¨3£©×Ó¾äexist
+            ï¼ˆ3ï¼‰å­å¥exist
             select cat_id,cat_name from cat where exist (select shop_id,cat_id from shop where shop.cat_id = cat.cat_id);
 
 
