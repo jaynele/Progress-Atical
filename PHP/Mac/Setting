@@ -115,7 +115,7 @@ sites:
 //文档https://laravel.com/docs/5.6/homestead#daily-usage
 //sudo vim ~/.zshrc
 //添加
-function homestead() {
+function homestead()
     ( cd ~/Homestead && vagrant $* )
 }
 //开心iterm新窗口，可以直接使用homestead命令里
