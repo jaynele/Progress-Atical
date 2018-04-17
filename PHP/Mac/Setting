@@ -165,7 +165,39 @@ oh-my-zsh下载（1）运行命令：git clone https://github.com/zsh-users/zsh-
 
 
 
+phpstorm界面简化
+command + shift + A 配置下面内容
+breadcrumbs 去掉文件路径
+code folding  去掉折叠线，去掉outline
+show method separators    背景色改掉namespace 和 class 分割线去掉，去掉show method separators
+command + 1 开关sidebar
+show right margin  去掉最右面的线
 
+
+
+phpstorm快捷键自定义 
+command + shift + A 打开keymap prefrence,起别名，配置方法都一样
+快速打开项目中某个文件  command + p             add key shutcut  file
+一个PHP文件里查看都有哪些方法  command + m   输入field找方法并定位    file structure
+打开最近打开过的文件     command + e    输入过滤
+跨文件定位某个类    command+L  
+
+
+
+phpstorm psr自动加载
+composer.json 里autoload里有
+app是source目录，创建类时候自动命名空间是app，可以在directors目录里选中app，选source修改命名空间名字
+
+
+
+PHPstorm 快速创建文件
+不在sidebar里创建文件
+command + 向上箭头   然后  command + n ,输入过滤进行创建
+
+
+phpstorm 配置file template
+文件创建作者名，创建时间等去掉
+command+shift+A 搜 file template   php class 文件去掉第一行
 
 
 
