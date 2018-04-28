@@ -227,4 +227,54 @@ resources目录放视图文件
 routes目录包含所有路由，四个路由文件用于给不同的入口使用，web.php  api.php   console.php   channels.php
 
 
+Nginx、tomcat访问日志准实时分析统计--goaccess
+获取线上用户访问日志分析统计结果
+goaccess图文并茂，每秒8w访问日志分析统计
+websorket10秒刷新
+linux下安装goaccess
+1、安装依赖
+yum install ncurses-devel
+wget http://geolite.maxmind.com/download/geoip/api/c/GeoIP.tar.gz
+tar -zxvf GeoIP.tar.gz
+cd GeoIP-1.4.8/
+./configure
+make && make install
+2、安装goaccess
+wget http://tar.goaccess.io/goaccess-1.1.1.tar.gz 
+tar -xzvf goaccess-1.1.1.tar.gz 
+cd goaccess-1.1.1/ 
+./configure –enable-geoip –enable-utf8 
+make 
+make install
+二、校对nginx的配置的日志格式（nginx.conf中log_format 使用以下自定义格式）
+ log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+
+                    '$status $body_bytes_sent "$http_referer" '
+
+                    '"$http_user_agent" "$http_x_forwarded_for" '
+
+                    '$connection $upstream_addr '
+
+                    '$upstream_response_time $request_time';               
+三、修改后重启： 
+nginx -s stop 
+nginx
+四、生成配置文件goaccess_log_conf_nginx.conf 
+vi /opt/goaccess/goaccess_log_conf_nginx.conf
+time-format %T
+date-format %d/%b/%Y
+log_format %h - %^ [%d:%t %^] "%r" %s %b "%R" "%u" "%^" %^ %^ %^ %T
+五、生成统计页面
+手工生成当日统计页面：
+goaccess -f /opt/nginx/logs/access.log -p /opt/goaccess/goaccess_log_conf_nginx.conf -o /opt/www/day-report.html
+生成实时统计页面
+nohup goaccess -f /opt/nginx/logs/access.log -p /opt/goaccess/goaccess_log_conf_nginx.conf -o /opt/www/real-time-yong-report.html --real-time-html --ws-url=report.xxx.com &
+检查是否存在进程：  ps -ef|grep goaccess
+各种日志格式转换工具：https://github.com/stockrt/nginx2goaccess 
+
+
+高并发系统限流：
+缓存、降级、限流
+
+
 
