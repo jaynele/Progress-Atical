@@ -215,16 +215,27 @@ phpstorm 配置file template
 command+shift+A 搜 file template   php class 文件去掉第一行
 
 
+git安装
+git-scm.com
+git config  
+global : ~/.gitconfig
+local  :.git/config
+system :/etc/.gitconfig
+git add src/*.js
+git commit --amend
+git log 用在after之后
+git reset --hard hash 某个hash时间点的代码
+git reset --sort hash 代码没有影响
+git log 
+git diff 文件
+git checkout -- 文件
+提交完后 git show hash 查看提交变化
+git rm -r --cached 文件夹
+.DS_Store 忽略调
 
-http://laravelacademy.org/post/8657.html
-app目录里，models目录放到APP目录下面
-应用核心代码在app下面，框架核心代码在/vendor/laravel/framework
-bootstrap目录里有个cache文件为了提升框架性能，放的缓存文件
-config目录框所有的配置
-database目录包含数据库迁移文件
-public目录包含应用入口文件和前端资源文件，图片，css，js
-resources目录放视图文件
-routes目录包含所有路由，四个路由文件用于给不同的入口使用，web.php  api.php   console.php   channels.php
+
+
+
 
 
 Nginx、tomcat访问日志准实时分析统计--goaccess
