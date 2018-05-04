@@ -63,6 +63,18 @@ php -r "unlink('composer-setup.php');"
 //打开官网packagist.org/,搜索laravel/installer,也可以laravel.com官网上，composer global require "laravel/installer"，把laravel下载下来，就可以使用laravel命令了，这样laravel就安装好了。但是安装到.composer目录里，不能直接用laravel命令，需要配置，vim ~/.zshrc 运行，第二行#去掉，加上一个环境～/.composer/vendor/bin:就可以保存退出，然后新输入laravel，看是否起作用。新开一个窗口,运行laravel就可以了。laravel new blog可 安装一个目录名是blog的laravel的项目
 
 
+
+php artisan make:migrations create_table_tablename --create=tablename
+php artisan migrate
+php artisan make:model Table
+php artisan make:controller TableController
+php artisan tinker
+进入交互界面数据库填充60条数据：
+namespace App;
+factory(ModelName::class, 60)->create();
+
+
+
 //laravel valet,配置dev访问
 //安装https://laravel.com/docs/5.6/valet  ,根据文档进行安装。
 //brew update
