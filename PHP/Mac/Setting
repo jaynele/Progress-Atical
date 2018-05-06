@@ -57,6 +57,10 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece38
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 到iterm2里，这样就安装好了，运行 php composer.phar,能看到composer的命令。命令简洁，只用composer就好，可以这样设置 mv composer.phar /usr/local/bin/composer 。然后直接运行composer就好了。
+Packagist 镜像使用方法
+方法一： 修改 composer 的全局配置文件（推荐方式）
+打开命令行窗口（windows用户）或控制台（Linux、Mac 用户）并执行如下命令：
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
 
 //laravel
