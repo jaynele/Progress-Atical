@@ -72,6 +72,8 @@ php artisan tinker
 进入交互界面数据库填充60条数据：
 namespace App;
 factory(ModelName::class, 60)->create();
+laravel 2002错误
+https://stackoverflow.com/questions/20723803/pdoexception-sqlstatehy000-2002-no-such-file-or-directory
 
 
 
