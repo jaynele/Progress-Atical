@@ -196,6 +196,46 @@ iterm2命令行自动提示
 oh-my-zsh下载（1）运行命令：git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 （2）.zshrc里添加plugins=(zsh-autosuggestions)  搜plugins 一个空格添加zsh-autosuggestions,保存退出，就可以使用了。
 
+packages
+composer require jpush/jpush 消息推送
+composer require lingxi/ali-opensearch-sdk 搜索
+
+composer require nesbot/carbon 时间
+composer require aishan/lumen-captcha  验证码
+composer require bacon/bacon-qr-code  
+composer require barryvdh/laravel-cors
+composer require cartalyst/sentry
+composer require defuse/php-encryption
+composer require dusterio/lumen-passport
+composer require firebase/php-jwt
+composer require fzaninotto/faker
+composer require guzzlehttp/guzzle
+composer require guzzlehttp/psr7
+composer require guzzlehttp/promises
+composer require hamcrest/hamcrest-php
+composer require intervention/image
+composer require jaybizzle/crawler-detect
+composer require jenssegers/agent
+composer require jenssegers/mongodb
+composer require jenssegers/mongodb-sentry
+composer require lcobucci/jwt
+composer require mnabialek/laravel-sql-logger
+composer require mobiledetect/mobiledetectlib
+composer require mongodb/mongodb
+composer require mtdowling/cron-expression
+composer require mustangostang/spyc
+composer require mycontroller/ucclient
+composer require phpseclib/phpseclib
+composer require predis/predis
+composer require qiniu/php-sdk
+composer require simplesoftwareio/simple-qrcode
+composer require soapbox/laravel-formatter
+composer require zendframework/zend-diactoros
+
+
+
+
+
 
 
 phpstorm界面简化
