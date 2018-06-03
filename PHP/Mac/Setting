@@ -198,6 +198,7 @@ oh-my-zsh下载（1）运行命令：git clone https://github.com/zsh-users/zsh-
 
 packages
 composer require jpush/jpush 消息推送
+composer require riverslei/xmpush
 composer require lingxi/ali-opensearch-sdk 搜索
 
 composer require nesbot/carbon 时间
