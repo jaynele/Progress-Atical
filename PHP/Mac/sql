@@ -1,6 +1,16 @@
 <?php
-sql explain
-decimal
-group by
-index using
-sql 优化
+
+//5.6组内排序问题
+select * from (
+    select id,no,name from testorder order by no desc
+)a group by a.name;
+
+
+//5.7组内排序问题
+select a.id,a.no,a.name
+    from testorder a inner join (
+        select max(no) no,name from testorder group by name
+    ) b on a.no = b.no and a.name = b.name
+group by name,no
+
+
