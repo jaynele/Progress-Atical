@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 123
- * Date: 2017/10/31
- * Time: 9:56
- */
+
 
 //服务端请求地址url
 
