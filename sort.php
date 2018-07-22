@@ -1,4 +1,5 @@
 <?php
+//快速排序
 function quick_sort($str) {
   if (!$str || !is_string($str)) {
     return false;
@@ -32,6 +33,7 @@ function quick_sort($str) {
 // $info = quick_sort($str);
 // var_dump($info);
 
+//获取连续重复字符的个数
 function strCount($str) {
 	if (!$str) {
 		return false;
