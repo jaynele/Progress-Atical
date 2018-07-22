@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 123
- * Date: 2017/8/8
- * Time: 10:42
- */
+
 class func{
     static  public function ser(){
         var_dump($_SERVER['HTTP_HOST']);//本地客户端localhost

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 123
- * Date: 2017/10/9
- * Time: 16:44
- */
+
 echo '
 
 优化解决的问题：

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 123
- * Date: 2017/10/9
- * Time: 13:48
- */
+
 echo '
 服务器性能剖析
 1、服务器是否达到了最佳状态

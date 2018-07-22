@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 123
- * Date: 2017/9/29
- * Time: 9:14
- */
+
 echo '
 
 myisam: check table tablename
