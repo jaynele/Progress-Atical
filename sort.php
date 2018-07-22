@@ -28,35 +28,6 @@ function quick_sort($str) {
 
 }
 
-// $str = '3,2,7,1,9,5';
-// $info = quick_sort($str);
-// var_dump($info);
-
-function strCount($str) {
-	if (!$str) {
-		return false;
-	}
-	$arr = explode(',', $str);
-	$length = count($arr);
-	$arrRes = [];
-	for ($i = 0;$i < $length;$i++) {
-		$is_finded = 0;
-		if ($arrRes) {
-			$num = count($arrRes) - 1;
-			$info = end($arrRes);
-			if ($info['key'] == $arr[$i]) {
-				$arrRes[$num]['count'] += 1;
-				$is_finded = 1;
-				continue;
-			}
-		}
-		if (!$is_finded) {
-			$arrRes[] = ['key'=>$arr[$i],'count'=>1];
-		}
-	}
-	return $arrRes;
-} 
-
-$str = 'a,b,a,c,b,b,a';
-$info = strCount($str);
+$str = '3,2,7,1,9,5';
+$info = quick_sort($str);
 var_dump($info);
