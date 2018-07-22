@@ -1,5 +1,5 @@
 <?php
-//快速排序
+//PHP快速排序
 function quick_sort($str) {
   if (!$str || !is_string($str)) {
     return false;
@@ -33,32 +33,53 @@ function quick_sort($str) {
 // $info = quick_sort($str);
 // var_dump($info);
 
-//获取连续重复字符的个数
+//PHP获取连续重复字符的个数
 function strCount($str) {
-	if (!$str) {
-		return false;
-	}
-	$arr = explode(',', $str);
-	$length = count($arr);
-	$arrRes = [];
-	for ($i = 0;$i < $length;$i++) {
-		$is_finded = 0;
-		if ($arrRes) {
-			$num = count($arrRes) - 1;
-			$info = end($arrRes);
-			if ($info['key'] == $arr[$i]) {
-				$arrRes[$num]['count'] += 1;
-				$is_finded = 1;
-				continue;
-			}
-		}
-		if (!$is_finded) {
-			$arrRes[] = ['key'=>$arr[$i],'count'=>1];
-		}
-	}
-	return $arrRes;
+  if (!$str) {
+    return false;
+  }
+  $arr = explode(',', $str);
+  $length = count($arr);
+  $arrRes = [];
+  for ($i = 0;$i < $length;$i++) {
+    $is_finded = 0;
+    if ($arrRes) {
+      $num = count($arrRes) - 1;
+      $info = end($arrRes);
+      if ($info['key'] == $arr[$i]) {
+        $arrRes[$num]['count'] += 1;
+        $is_finded = 1;
+        continue;
+      }
+    }
+    if (!$is_finded) {
+      $arrRes[] = ['key'=>$arr[$i],'count'=>1];
+    }
+  }
+  return $arrRes;
 } 
 
-$str = 'a,b,a,c,b,b,a';
-$info = strCount($str);
-var_dump($info);
+// $str = 'a,b,a,c,b,b,a';
+// $info = strCount($str);
+// var_dump($info);
+
+//PHP二分查找
+function getFindInfo ($arr,$lower,$hight,$m) {
+  if (!$arr) {
+    return 'error';
+  }
+  $mid = intval(($lower + $hight) / 2);
+  if ($arr[$mid] == $m) {
+    return $arr[$mid].'/'.$mid;
+  } elseif ($arr[$mid] < $m) {
+      return getFindInfo($arr,$mid + 1,$hight,$m);
+  } elseif ($arr[$mid] > $m) {
+      return getFindInfo($arr,$lower,$mid - 1,$m);
+  }
+}
+
+
+$str = '3,2,5,1,4';
+$arr = explode(',', $str);
+sort($arr);
+echo getFindInfo($arr,0,4,5);
