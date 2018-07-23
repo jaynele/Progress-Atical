@@ -1,6 +1,6 @@
-<?php
 
-echo '
+
+
 
 mysql  需求分析   ：数据是什么，数据有什么特性
        逻辑设计   ：通过ER图,实体与实体之间的关系
@@ -13,7 +13,20 @@ mysql  需求分析   ：数据是什么，数据有什么特性
 数据库表结构设计和sql优化
 
 
-sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("ii","nv"),("oo","kj");
+sql   
+      //sql列转行
+      select p_id ,  sum(case when s_id=1 then p_num else 0 end) as s1_id  ,sum(case when s_id=2 then p_num else 0 end) as s2_id  ,sum(case when s_id=3 then p_num else 0 end) as s3_id  from test group by p_id
+
+      //select 后 insert 后update
+      insert into `ts_article_cate_relation`  select null,`articleid`,`cateid`,`addtime`,1 from ts_article where cateid>0
+
+      //跨表更新update
+      update ts_user_info i INNER JOIN (SELECT userid,entry_year from ts_user_verify where status = 1  and entry_year> 0 GROUP BY userid) v  on i.`userid` = v.userid set i.entry_year = v.`entry_year` where i.entry_year = 0
+
+
+
+
+      添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"),("ii","nv"),("oo","kj");
       修改：   update zmn_user set user_name = "pp" where user_id = 23;
       删除：   delete from zmn_user where user_id = 2;
       查询： 一列计算
@@ -94,16 +107,3 @@ sql   添加：   insert into zmn_user (user_name,user_sex) values ("lili","男"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-';
