@@ -24,6 +24,10 @@
 安装color ide,安装ideavim,设置页面editor,color scheme,general等便可以设置
 
 
+//mysql
+1045 error
+
+
 //homebrew
 //借助homebrew,https://brew.sh/这里可以点击下载，是一个软件的包管理，可以轻松安装东西，复制/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 到iterm2命令行里回车安装输入密码成功后，输入命令brew -h 可以看到已经起作用,brew命令的使用有例子
