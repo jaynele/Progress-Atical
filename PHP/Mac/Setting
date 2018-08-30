@@ -158,11 +158,43 @@ homestead中php环境没有redis扩展
 编译            ./configure --with-php-config=/usr/bin/php-config7.2
 编译执行         make && make install
 在phpredis目录下面，生成个./module/redis.so
-查看php的extension_dir    php -i|grep extension_dir
-把redis.so移到扩展目录里    sudo cp ./module/redis.so /usr/lib/php/20171218
+查看php的extension_dir    php -i|grep extension_dir    
+把redis.so移到扩展目录里    sudo cp ./module/redis.so /usr/lib/php/20170718
 创建redis.ini配置文件      sudo touch /etc/php/7.2/fpm/conf.d/20-redis.ini
 使用vi编辑器写入如下内容     extension=redis.so
 重启查看phpinfo()是否有redis扩展
+
+
+homestead中php7.2安装grpc扩展
+资源安装
+1  git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
+2  可以 Build and install the gRPC C core library.
+    $ cd grpc
+    $ git submodule update --init
+    $ make
+    $ sudo make install
+3 可以Compile the gRPC PHP extension
+   $ cd grpc/src/php/ext/grpc
+   $ /usr/bin/phpize7.2
+   $ ./configure --with-php-config=/usr/bin/php-config7.2
+   $ make
+   $ sudo make install
+4 添加extension=grpc.so 扩展跟redis类似
+   sudo touch /etc/php/7.2/fpm/conf.d/20-grpc.ini
+   extension=grpc.so
+
+
+homestead中php7.2安装phalcon扩展
+1   sudo git clone https://github.com/phalcon/cphalcon
+2   cd cphalcon/build
+3   sudo ./install --phpize /usr/bin/phpize7.2 --php-config /usr/bin/php-config7.2
+4   添加extension=phalcon.so 扩展跟redis类似
+    sudo touch /etc/php/7.2/fpm/conf.d/20-phalcon.ini
+    extension=phalcon.so
+    
+  
+
+
 
 
 //vim配置
