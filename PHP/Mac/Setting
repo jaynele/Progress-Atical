@@ -386,4 +386,11 @@ nohup goaccess -f /opt/nginx/logs/access.log -p /opt/goaccess/goaccess_log_conf_
 缓存、降级、限流
 
 
+laravel tinker 生成数据
+
+php artisan tinker
+factory(App\Models\User::class,2)->create()
+factory(App\Models\UserAddress::class, 3)->create(['user_id' => 1])
+
+
 
