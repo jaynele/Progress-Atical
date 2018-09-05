@@ -388,9 +388,14 @@ nohup goaccess -f /opt/nginx/logs/access.log -p /opt/goaccess/goaccess_log_conf_
 
 laravel tinker 生成数据
 
-php artisan tinker
+1  php artisan tinker
+注意有关联数据，先生成主表数据
 factory(App\Models\User::class,2)->create()
 factory(App\Models\UserAddress::class, 3)->create(['user_id' => 1])
+
+2 
+   orm自定义
+
 
 
 
