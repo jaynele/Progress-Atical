@@ -394,7 +394,16 @@ factory(App\Models\User::class,2)->create()
 factory(App\Models\UserAddress::class, 3)->create(['user_id' => 1])
 
 2 
-   orm自定义
+   orm中间表
+   withPivot  中间表哪些属性可以访问
+   pivot  访问中间表属性
+   as   pivot属性重命名
+   using   中间表模型调用   定义 中间表 模型时，我们要扩展 Pivot 类
+   wherePivot  中间表信息过滤
+   
+3
+   用属性访问获取对象模型
+   用方法访问添加过滤条件
 
 
 
