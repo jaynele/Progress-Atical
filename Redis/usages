@@ -1,0 +1,92 @@
+key - value 存储
+数据结构
+速度快，持久化，多种数据结构，多种编程语言，功能，简单，主从复制，高可用分布式
+10w ops,数据存内存，用c，单线程
+ps -ef | grep redis
+netstat -antpl | grep redis
+redis-cli -h 127.0.0.1 -p 6379 ping
+redis-cli -h 127.0.0.1 info 
+redis-server configPath
+一台机器配置文件用端口区分开
+redis-server --port 6380
+去掉注释去掉空格查看文件
+cat redis.conf | grep -v "#" | grep -v "^$" 
+把去掉注释去掉空格的内容写入到新的文件中
+cat redis.conf | grep -v "#" | grep -v "^$" > redis-new.conf
+
+
+config
+daemonize yes
+port 6382
+dir ""
+logfile "test.log"
+
+
+获取所有配置
+config get * 
+通用命令
+数据结构和内部编码
+内存优化
+单线程架构
+
+通用命令keys不在生产环境使用
+keys *  所有
+keys key1*   匹配
+keys key1[p-l]*   匹配
+keys key1?    匹配
+
+dump key1     序列化
+restore key2 ttl "fdls"  反序列化
+
+exists key1  是否存在
+
+expire key1 30   30秒
+ttl key1 剩余
+
+dbsize 个数
+
+flushdb 清空
+
+select 1 选择
+
+move key1 1 移动
+
+persist key1  易失变为永久
+
+pexpire 设置毫秒有效时间
+
+randomkey 任意key
+
+rename key1 key2
+
+renamenx key1 key2  当key2不存在重新设置名字
+
+restore key2 ttl "" 反序列化信息
+
+SORT rank LIMIT 0 5 DESC
+
+SORT uid BY user_level_*
+
+SORT uid GET user_name_*
+
+SORT uid BY user_level_* GET user_name_*
+
+SORT uid GET # GET user_level_* GET user_name_*
+
+SORT uid BY not-exists-key GET # GET user_level_* GET user_name_*
+
+LRANGE fp-language 0 0
+
+exists key1
+del key1
+expire key1 seconds
+type key1
+
+
+（strign）
+set key1 val1
+get key1
+mset key1 val1 key2 val2
+
+
+
