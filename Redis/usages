@@ -132,6 +132,7 @@ LINDEX key index
 (set)
 给一个集合添加元素
 sadd
+获取一个集合元素的个数
 scard
 sdiff
 sdiffstore
