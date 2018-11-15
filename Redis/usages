@@ -84,9 +84,106 @@ type key1
 
 
 （strign）
-set key1 val1
-get key1
-mset key1 val1 key2 val2
+append
+decr
+incr
+decrby
+incrby
+set
+mset
+get
+mget
+strlen
+getset
+setnx
+setrange
+setex
+
+(hash)
+hdel
+hgetall
+hset
+hget
+hexist
+hmset
+hmget
+hkeys
+hincrby
+hlen
+hsetnx
+hvals
+hstrlen
+
+
+(list)
+lpush
+rpush
+lrange
+llen
+lpop
+rpop
+ltrim
+lset
+LREM key count value
+LINSERT key BEFORE|AFTER pivot value
+LINDEX key index
+
+
+(set)
+sadd
+sdiff
+sdiffstore
+sinter
+sinterstore
+sismember
+smembers
+smove
+spop
+srandmember
+srem
+sunion
+sunionstore
+
+
+(zset)
+添加一个有序集合
+zadd
+获取一个有序集合的基数
+zcard
+获取一定范围score的数量
+zcount
+获取一个属性的score
+zscore
+给一个属性score加10
+zincrby
+获取一定下标范围的属性
+zrange
+获取一定score范围的属性
+zrangebyscore
+
+zrank
+zrem
+zremrangebyrank
+zremrangebyscore
+zrevrange
+zrevrangebyscore
+zunionstore
+zinterstore
+zrangebylex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
