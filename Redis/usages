@@ -116,12 +116,17 @@ hstrlen
 
 
 (list)
+向列表中添加元素
 lpush
 rpush
+获取列表中元素
 lrange
+获取列表长度
 llen
+获取列表一个元素
 lpop
 rpop
+
 ltrim
 lset
 LREM key count value
@@ -134,17 +139,29 @@ LINDEX key index
 sadd
 获取一个集合元素的个数
 scard
+获取集合差集元素
 sdiff
+把集合差集元素存储起来
 sdiffstore
+获取集合交集元素
 sinter
+把集合交集元素存储起来
 sinterstore
+判断一个元素是否是一个集合中
 sismember
+获取一个集合所有元素
 smembers
+把一个元素从一个集合移动到另外一个集合中
 smove
+获取并移除随机的一个元素
 spop
+获取一个集合随机几个元素
 srandmember
+移除多个元素
 srem
+获取集合的并集
 sunion
+把并集存储起来
 sunionstore
 
 
