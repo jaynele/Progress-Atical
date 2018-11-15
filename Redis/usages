@@ -84,7 +84,11 @@ type key1
 
 
 （strign）
-set
+场景：缓存/计数器/分布式锁。。。
+1:每个用户个人页的访问量  单线程解决并发，不会出现计错数的现象
+2:缓存
+3:分布式id生成器
+set   set xx 更新
 mset
 get
 mget
@@ -100,7 +104,7 @@ setnx
 setrange
 setex
 
-(hash)
+(hash)应用场景同string
 设置一个域值
 hset
 获取一个值
@@ -129,7 +133,7 @@ hsetnx
 hstrlen
 
 
-(list)
+(list)消息队列
 向列表中添加元素
 lpush
 rpush
@@ -152,7 +156,7 @@ LINSERT key BEFORE|AFTER pivot value
 LINDEX key index
 
 
-(set)
+(set)抽奖系统，点赞，用户标签，社交
 给一个集合添加元素
 sadd
 获取一个集合元素的个数
@@ -183,7 +187,7 @@ sunion
 sunionstore
 
 
-(zset)
+(zset)排行榜
 添加一个有序集合
 zadd
 获取一个有序集合的基数
