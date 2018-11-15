@@ -84,34 +84,48 @@ type key1
 
 
 （strign）
+set
+mset
+get
+mget
 append
 decr
 incr
 decrby
 incrby
-set
-mset
-get
-mget
 strlen
 getset
 setnx
+重写
 setrange
 setex
 
 (hash)
-hdel
-hgetall
+设置一个域值
 hset
+获取一个值
 hget
-hexist
+设置多个域
 hmset
+获取多个值
 hmget
+获取多个域和值
+hgetall
+获取多个域
 hkeys
-hincrby
-hlen
-hsetnx
+获取多个值
 hvals
+删除多个值
+hdel
+判断是否存在
+hexists
+值增加10
+hincrby
+获取多少基数
+hlen
+健不存在时候设置
+hsetnx
+值字符串长度
 hstrlen
 
 
@@ -126,11 +140,15 @@ llen
 获取列表一个元素
 lpop
 rpop
-
+保留区间内的元素
 ltrim
+修改某个索引的元素值
 lset
+删除几个值
 LREM key count value
+插入值
 LINSERT key BEFORE|AFTER pivot value
+获取某个索引的值
 LINDEX key index
 
 
