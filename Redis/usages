@@ -160,16 +160,23 @@ zincrby
 zrange
 获取一定score范围的属性
 zrangebyscore
-
+获取一个属性的排名
 zrank
+获取移除属性的个数
 zrem
+获取按照顺序排序后移除的一定下标区间的属性个数
 zremrangebyrank
+获取按照顺序排序后移除的一定score区间的属性个数
 zremrangebyscore
+获取一定下标范围倒序的属性
 zrevrange
+获取一定score范围倒序的属性
 zrevrangebyscore
+获取两个集合的合集追加
 zunionstore
+获取两个集合的交集相加
 zinterstore
-zrangebylex
+
 
 
 
