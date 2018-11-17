@@ -1,4 +1,24 @@
 <?php
+
+//冒泡排序
+function buttle($arr)
+{
+    $len = count($arr);
+    if ($len == 1) {
+        return $arr;
+    }
+    for ($i = 0; $i < $len; $i++) {
+        for ($j = $i + 1; $j < $len; $j++) {
+            if ($arr[$i] > $arr[$j]) {
+                $tmp = $arr[$i];
+                $arr[$i] = $arr[$j];
+                $arr[$j] = $tmp;
+            }
+        }
+    }
+    return $arr;
+}
+
 //PHP快速排序
 function quick_sort($str) {
   if (!$str || !is_string($str)) {
