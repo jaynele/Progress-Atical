@@ -176,3 +176,6 @@ function array_tree($array) {
 
 $res = array_tree($info);
 // var_dump($res);
+
+
+//递归求n的阶乘
