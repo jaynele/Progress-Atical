@@ -1,0 +1,58 @@
+1  composer require guzzlehttp/guzzle
+
+
+public function tuling(Request $request) {
+        $params = [
+            'key' => '*****',
+            'userid' => 'yemeishu'
+        ];
+
+        $params['info'] = $request->input('info', '你好吗');
+
+        $client = new Client();
+        $options = json_encode($params, JSON_UNESCAPED_UNICODE);
+        $data = [
+            'body' => $options,
+            'headers' => ['content-type' => 'application/json']
+        ];
+
+        // 发送 post 请求
+        $response = $client->post('http://www.tuling123.com/openapi/api', $data);
+
+        $callback = json_decode($response->getBody()->getContents());
+
+        return $this->output_json('200', '测试图灵机器人返回结果', $callback);
+    }
+
+
+2
+
+public function httpRequest($url, $is_post = true, $parameters = [], $headers = [])
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, $is_post);
+
+        if ($is_post) {
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($parameters));
+        }
+
+        if (stripos($url, 'https://') === 0) {
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        }
+
+        if (!empty($headers)) {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        }
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($response, true);
+    }
