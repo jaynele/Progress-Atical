@@ -164,6 +164,10 @@ homestead中php环境没有redis扩展
 使用vi编辑器写入如下内容     extension=redis.so
 重启查看phpinfo()是否有redis扩展
 
+homestead中nginx配置
+/etc/nginx/sites-enabled/think.test
+参考https://laravel-china.org/index.php/topics/3030/homestead-configuration-nginx-and-other-issues?order_by=created_at&
+
 
 homestead中php7.2安装grpc扩展
 资源安装
