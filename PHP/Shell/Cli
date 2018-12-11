@@ -1,0 +1,4 @@
+php -m
+php --ini
+php -i|grep extension_dir 
+php -v
