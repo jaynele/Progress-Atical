@@ -422,5 +422,27 @@ overtrue / laravel
 overtrue laravel-wechat
 公众号配置
 
+supervisor
+下面问题解决方案
+Exited too quickly (process log may have details)
+把[program:XXX]中的名字换成一个跟启动命令不一样的另一个名字
 
+sudo supervisorctl -c /usr/local/etc/supervisord.ini status
+sudo supervisorctl -c /usr/local/etc/supervisord.ini reload
+sudo supervisorctl -c /usr/local/etc/supervisord.ini start lllll
+
+下面问题解决方案
+http://localhost:9001 refused connection
+
+[inet_http_server]         ; inet (TCP) server disabled by default
+
+port=127.0.0.1:9001        ; ip_address:port specifier, *:port for all iface
+
+username=user              ; default is no username (open server)
+
+password=123               ; default is no password (open server)
+
+这几项的前面都把;移除
+
+启动的时候使用-c 加载该配置文件
 
